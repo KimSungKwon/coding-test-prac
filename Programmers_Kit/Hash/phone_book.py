@@ -1,6 +1,6 @@
 '''
-완주하지 못한 선수
-https://programmers.co.kr/learn/courses/30/lessons/42576
+전화번호 목록
+https://programmers.co.kr/learn/courses/30/lessons/42577
 
 2중 for문은 시간초과
 문자열 정렬을 이용해서 인접하는 문자열만 확인해야 함
