@@ -9,7 +9,7 @@ brown == (가로+2)x2 + (세로)x2 를 만족해야 함.
 
 def solution(brown, yellow):
     answer = []
-    for i in range(1, yellow + 1):
+    for i in range(1, yellow + 1):  # yellow가 24라면 1부터 24까지
         if yellow % i == 0:
             quot = yellow // i  # quot: 가로  i: 세로
             if ((quot + 2) * 2) + (i * 2) == brown:  # brown == (가로+2)x2 + (세로+2)x2
