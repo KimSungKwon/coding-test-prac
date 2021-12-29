@@ -1,32 +1,26 @@
-answer = 0
+n, m = list(map(int, input().split()))
+arr = list(map(int, input().split()))
 
-def bs(arr, target, start, end):
-    global answer
-    
+def binary_search(arr, target, start, end):
+
     while start <= end:
-        mid = (start+end) // 2
-        result = 0
-
-        # 높이가 mid인 절단기로 떡 자르기. 떡의 양 == result
-        for e in arr:
-            if e > mid:
-                result += e - mid
+        total = 0
+        mid = (start + end) // 2
         
-        # 최적의 해
-        if result == target:
-            answer = mid
-            break
-        # 떡의 양이 모자름 => 절단기의 높이를 줄임
-        elif result < target:
-            end = mid - 1
-        # 떡의 양이 초과됨 => 절단기의 높이를 늘림. 최적의 해 안 나올 수 있으니 일단 결과값 저장
-        else:
-            answer = mid
+        # 떡들을 mid 높이의 절단기로 잘라서 잘린 떡을 total에 합함
+        for i in range(len(arr)):
+            temp = arr[i] - mid
+            if temp > 0:
+                total += temp
+        
+        # total이 target보다 클 경우: 절단기의 높이를 높임. 낮을 경우: 높이를 낮춤
+        if total == target:
+            return mid
+        elif total >= target:
             start = mid + 1
+        else:
+            end = mid - 1
 
-n, m = map(int, input().split())
-arr1 = list(map(int, input().split()))
+    return None
 
-arr1.sort()
-bs(arr1, m, 0, max(arr1))
-print(answer)
+print(binary_search(arr, m, 0, max(arr)))
