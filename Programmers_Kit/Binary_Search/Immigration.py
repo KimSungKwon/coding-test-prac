@@ -2,28 +2,29 @@
 입국심사
 https://programmers.co.kr/learn/courses/30/lessons/43238
 
-파라메트릭 서치 방법
+파라메트릭 서치 방법 (최적 구하기)
 '''
 
 def solution(n, times):
     answer = 0
-    start = 1
+    start = 0
     end = max(times) * n
-
+    
     while start <= end:
-        mid = (start+end) // 2
-        temp = 0
-
-        # mid 분에 몇 명을 받을 수 있나
-        for e in times:
-            temp += mid // e  
+        # mid: 모든 사람이 검사받은 시간
+        mid = (start + end) // 2
+        people = 0
         
-        # mid 분에 더 많은 사람을 받을 수 있으면
-        if temp >= n:
-            answer = mid
+        for time in times:
+            # people: mid시간동안 총 검사받을 수 있는 사람 수
+            people += mid // time
+            
+        # people이 n과 같음: 시간이 딱 맞음(최적)
+        # people이 n보다 큼: 시간이 남아 돔 (더 적게 설정하기), 일단 답으로 설정
+        if people >= n:
+            answer = mid    
             end = mid - 1
-        # 시간이 촉박하면
         else:
-            start = mid + 1 
-
+            start = mid + 1
+            
     return answer
