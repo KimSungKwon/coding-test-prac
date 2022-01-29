@@ -17,7 +17,7 @@ graph =[[] for i in range(n+1)] # 인접 노드 그래프
 distance = [INF] * (n+1)        # 최단거리 테이블
 
 # 그래프 값 입력
-for _ in range(n+1):
+for _ in range(m):
     a, b, c = map(int, input().split())
     graph[a].append((b, c))     # 노드a에서 b로 가는 거리는 c
 
