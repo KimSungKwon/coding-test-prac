@@ -8,7 +8,7 @@ n, m = map(int, input().split())
 
 graph = [[INF] * (n+1) for _ in range(n+1)]
 
-# 자기 자신 == 0
+# a에서 a로 이동하는 거리: 0
 for a in range(1, n+1):
     for b in range(1, n+1):
         if a == b:
@@ -27,7 +27,7 @@ for i in range(1, n+1):
         for b in range(1, n+1):
             graph[a][b] = min(graph[a][b], graph[a][i]+graph[i][b])
 
-# 1~k~x의 최단거리 == 1~k + k~x
+# 1~k~x의 최단거리: 1~k + k~x
 answer = graph[1][k] + graph[k][x]
 if answer >= INF:
     answer = -1
