@@ -3,7 +3,7 @@ n =  int(input())
 m = int(input())
 
 # n+1: 노드 번호가 1부터 시작하게
-graph = [[INF] * n+1 for _ in range(n+1)]
+graph = [[INF] * (n+1) for _ in range(n+1)]
 
 # i번에서 i번 노드로 가는 경로는 0
 for a in range(1, n+1):
