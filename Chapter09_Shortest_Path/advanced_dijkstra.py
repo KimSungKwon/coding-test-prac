@@ -29,7 +29,7 @@ def dijkstra(start):
     
     # 큐가 다 빌 때 까지
     while q:
-        dist, now = heapq.heappop()
+        dist, now = heapq.heappop(q)
         # 방문 여부 판단
         if dist > distance[now]:
             continue
