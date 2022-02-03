@@ -4,9 +4,9 @@
 def find_parent(parent, x):
     # x가 루트노드가 아니면
     if parent[x] != x:
-        return find_parent(parent, parent[x])
+        parent[x] =  find_parent(parent, parent[x])
     # x가 루트노드면 x 리턴
-    return x
+    return parent[x]
 
 def union_parent(parent, a, b):
     # 각각 루트노드 찾기
