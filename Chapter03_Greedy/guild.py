@@ -1,6 +1,8 @@
 '''
+Q 01
 모험가 길드
 '''
+
 n = int(input())  # 불 필요..
 
 data = list(map(int, input().split()))
