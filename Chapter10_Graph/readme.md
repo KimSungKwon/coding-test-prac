@@ -2,6 +2,7 @@
 ## 서로소 집합 연산
 - union & find_parent : **무방향** 그래프의 사이클 판별 가능
 	> find_parent의 값이 서로 다르면? union 해서 합침
+	
 	> find_parent의 값이 같으면? cycle 있음
 ## 신장 트리 *spanning tree*
 - 모든 노드를 방문할 수 있고 사이클이 없는 그래프 (== 트리)
