@@ -13,5 +13,6 @@
     turn_left(): 
 	    global direction
 	    direction -= 1
-	    if direction == -1: direction = 3
+	    if direction == -1: 
+	    	direction = 3
 	    nx = x + dx[direction] ...
