@@ -35,6 +35,6 @@
     data = ['A', 'B', 'C']
     
     permut = list(permutations(data, 3))	// 데이터 중 3개를 뽑아 나열 (순열)
-	combi = list(combinations(data, 2))		// 데이터 중 2개를 뽑아 나열 (조합)
+	combi = list(combinations(data, 2))	// 데이터 중 2개를 뽑아 나열 (조합)
 	prod = list(product(data, repeat=2))	// 데이터 중 2개를 뽑아 나열 (중복순열)
 	combi_rpt = list(combinations_with_replacement(data, 2)) // 데이터 중 2개를 뽑아..
