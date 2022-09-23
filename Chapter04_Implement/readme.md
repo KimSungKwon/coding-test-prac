@@ -29,7 +29,7 @@
 
     from itertools import permutations	// 순열: 순서 다르면 다른거 취급
     from itertools import combinations	// 조합: 순서 달라도 같은거 취급
-    from itertools import product		// 중복순열: 순열 + 원소의 중복사용 허용
+    from itertools import product	// 중복순열: 순열 + 원소의 중복사용 허용
     from itertools improt combinations_with_replacement	// 조합 + 중복허용
     
     data = ['A', 'B', 'C']
