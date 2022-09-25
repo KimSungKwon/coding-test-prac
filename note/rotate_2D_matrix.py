@@ -1,5 +1,5 @@
 '''
-Rotate 2D matrix 90'
+Rotate 2D matrix 90' 시계방향
 '''
 
 def rotate_2D_matrix(arr):
