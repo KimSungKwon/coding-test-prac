@@ -13,7 +13,17 @@
 		    if not visited[i]:
 			    // 변형 가능
 			    dfs(graph, i, visited)	// 3
+			    
+정해진 갯수를 랜덤으로 흩뿌리기 (순열과 조합)
 
+    // 3개(num == 3)를 랜덤으로 
+	def dfs(param, num):
+        if num == 3:
+            break;	// finish
+            
+	    num += 1
+	    dfs(param, num)
+	    num -= 1
 ## BFS
 큐 활용. 큐에 삽입된 순서가 탐색 순서
 > 1. 탐색 시작 노드를 **큐에 삽입, 방문처리**
