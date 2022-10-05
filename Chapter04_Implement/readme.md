@@ -21,15 +21,15 @@
 ### **2차원 배열 회전**
 
     def rotate_2D_matrix(arr):
-    n = len(matrix) # column length
-    m = len(arr[0]) # row length
-    result = [[0] * n for _ in range(m)]
+        n = len(matrix) # column length
+        m = len(arr[0]) # row length
+        result = [[0] * n for _ in range(m)]
     
-    for i in range(n):
-      for j in range(m):
-        result[j][n - i - 1] = arr[i][j]
+        for i in range(n):
+          for j in range(m):
+            result[j][n - i - 1] = arr[i][j]
     
-    return answer
+        return result
 ## 완전탐색
 모든 경우의 수를 빠짐없이 다 계산.
 - 일반적으로 DFS / BFS 이용하여 해결
