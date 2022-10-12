@@ -55,3 +55,9 @@
 		for a in range(1, v + 1):
 			for b in range(1, v + 1):
 				graph[a][b] = min(graph[a][b], graph[a][k] + graph[k][b])
+	
+	# 출력
+	for a i range(v + 1):
+		for b in range(v + 1):
+			if graph[a][b] != INF:
+				print(graph[a][b], end='')
