@@ -60,4 +60,5 @@
 	for a i range(v + 1):
 		for b in range(v + 1):
 			if graph[a][b] != INF:
-				print(graph[a][b], end='')
+				print(graph[a][b], end=' ')
+		print()
