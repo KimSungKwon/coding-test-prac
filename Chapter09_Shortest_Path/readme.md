@@ -47,9 +47,12 @@
 > 점화식: Dab = min(Dab, Dak + Dkb) 
 
     graph = [[INF] * (v + 1) for _ in range(v + 1)]
+    
+    	for a in range(1, n + 1):
+		for b in range(1, n + 1):
+			if a == b: graph[a][b] = 0
+			
 	for _ in range(e):
-		if a == b:
-			graph[a][b] = 0
 		graph[a][b] = c	# a에서 b로 가는 비용 = c
 
 	# floyd 
