@@ -53,5 +53,5 @@
 	# floyd 
 	for k in range(1, v + 1):
 		for a in range(1, v + 1):
-			for b in range(1,v + 1):
+			for b in range(1, v + 1):
 				graph[a][b] = min(graph[a][b], graph[a][k] + graph[k][b])
