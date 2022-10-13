@@ -1,3 +1,7 @@
+"""
+Q37 플로이드
+"""
+
 INF = 987654321
 n = int(input())
 m = int(input())
