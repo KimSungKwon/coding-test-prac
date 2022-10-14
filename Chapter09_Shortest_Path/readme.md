@@ -23,7 +23,7 @@
 	distance = [INF] * (v + 1)	# 2
 
 	for _ in range(e):
-		graph[a].append(b, c)	# a노드에서 b노드로 가는 비용 = c
+		graph[a].append((b, c))	# a노드에서 b노드로 가는 비용 = c
 
 	def dijkstra(start):
 		heapq.heappush(q, (0, start))
