@@ -11,7 +11,7 @@ union & find_parent : **무방향** 그래프의 사이클 판별 가능
     def find_parent(parent, x):
 	    if parent[x] != x:	# 루트 노드가 아니면, 루트 노드를 찾을 때 까지 재귀
 		    parent[x] = find_parent(parent, parent[x])
-		return parent[x]
+	    return parent[x]
 
     def union(parent, a, b):
 	    # 서로 부모를 찾아서
