@@ -16,15 +16,15 @@ union & find_parent : **무방향** 그래프의 사이클 판별 가능
     def union(parent, a, b):
 	    # 서로 부모를 찾아서
 	    a = find_parent(parent, a)
-		b = find_parent(parent, b)
+	    b = find_parent(parent, b)
 		
-		# 더 적은 번호의 노드로 통합
-		if a < b:
-			parent[b] = a
-		else:
-			parent[a] = b
+	    # 더 적은 번호의 노드로 통합
+	    if a < b:
+		    parent[b] = a
+	    else:
+		    parent[a] = b
 
-	if find_parent(parent, x) == find_parent(parent, y): cycle = True 
+    if find_parent(parent, x) == find_parent(parent, y): cycle = True 
 
 ## 신장 트리 *spanning tree*
 - 모든 노드를 방문할 수 있고 사이클이 없는 그래프 (== 트리)
