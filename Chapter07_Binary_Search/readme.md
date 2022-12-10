@@ -28,6 +28,7 @@
 
 		    ...
     while start <= end:
+	    mid = (start + end) // 2
 	    
 	    for i in range(n):
 		    temp = arr[i] - mid
