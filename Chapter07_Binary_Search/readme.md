@@ -30,15 +30,17 @@
     while start <= end:
 	    mid = (start + end) // 2
 	    
+	    # 조건값(total) 계산
 	    for i in range(n):
-		    temp = arr[i] - mid
-		    if temp > 0:
-			    total += temp
-		if total == target:
-			return mid
-		elif total >= target:
-			start = mid + 1
-		else
+		temp = arr[i] - mid
+		if temp > 0:
+			total += temp
+			
+	    if total == target:
+	        return mid
+	    elif total >= target:
+		start = mid + 1
+	    else
 			...
 ## 내장 라이브러리
 ### bisect
