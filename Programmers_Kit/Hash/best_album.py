@@ -3,7 +3,7 @@
 https://programmers.co.kr/learn/courses/30/lessons/42579
 
 plays_dict: {"장르": 재생횟수 총합}
-id_dict: {"장르": ([고유번호, 재생횟수])}
+id_dict: {"장르": [(고유번호, 재생횟수), (A, B), ...]}
 plays_sorted: 재생횟수 총합이 높은 순으로 정렬된 리스트
 
 sorted(iterable, key = lambda x : (x[1], -x[0]))  # 튜플의 두번 째 인자를 기준으로 먼저 정렬, 값이 같을 경우 그 다음 첫 번째 인자를 기준으로 역순 정렬
