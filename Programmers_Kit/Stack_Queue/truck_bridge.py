@@ -3,23 +3,24 @@
 https://programmers.co.kr/learn/courses/30/lessons/42583
 '''
 
-import collections
+from collections import deque
 
 def solution(bridge_length, weight, truck_weights):
-    bridge = 0  # bridge: 현재 다리에 놓여진 무게
-    bridge_que = collections.deque()    # 현재 다리에 있는 트럭들 (트럭무게, 진입시간)
-    truck_que = collections.deque(truck_weights)  # 현재 대기중인 트럭들
+    bridge = deque()    # 다리에 있는 트럭들
+    trucks = deque(truck_weights)   # 대기 중인 트럭들
+    bridge_weight = 0   # 다리에 있는 트럭들의 무게
     time = 0
 
-    while(bridge_que or truck_que):
+    while (bridge or trucks):
         time += 1
-
-        if bridge_que and (bridge_que[0][1] + bridge_length == time): # 트럭이 지나갈 수 있는 시간이 충족되면
-            bridge -= bridge_que[0][0]
-            bridge_que.popleft()
-      
-        if truck_que and (bridge + truck_que[0] <= weight): # 트럭이 다리에 진입해도 다리의 무게제한이 초과하지 않으면
-            bridge += truck_que[0]
-            bridge_que.append((truck_que.popleft(), time))
-
+        
+        if bridge and (time == bridge[0][1] + bridge_length):   # 다리에 트럭이 있고 맨 앞 트럭의 시간이 다 됐을 때
+            bridge_weight -= bridge[0][0]
+            bridge.popleft()
+            
+        if trucks and (trucks[0] + bridge_weight <= weight):    # 남아있는 트럭이 있고 다리의 무게가 여유 있을 때
+            bridge_weight += trucks[0]
+            bridge.append((trucks.popleft(), time))
+    
     return time
+
