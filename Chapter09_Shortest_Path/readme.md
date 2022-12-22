@@ -6,6 +6,7 @@
 
     import heapq
     q = []
+    heapq.heapify(q)	# q를 heap으로 만듬 (필수 아닌거같음)
     heapq.heappush(q, (2, node1))	# q에 (2, node1)삽입. 우선순위 값은 2
     heapq.heappush(q, (0, node2))	# q에 (0, node2)삽입. 우선순위 값은 0	(자동으로 정렬됨)
     heapq.heappop(q)	# pop.. (0, node2)
