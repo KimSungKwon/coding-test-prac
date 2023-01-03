@@ -9,23 +9,26 @@ limit 초과일 경우 left만 +1 (최소값은 그대로 있고 최대값만 �
 
 def solution(people, limit):
     answer = 0
-    people.sort(reverse=True)
+    people.sort()
     
-    right = len(people) - 1
     left = 0
+    right = len(people) - 1
 
     while True:
-        if left == right:  # 리스트에 확인할 원소가 하나만 있음
+        if left > right:  # 리스트에 확인할 원소가 하나만 있음
+            break
+            
+        elif left == right: # 리스트에 확인할 원소가 없음
             answer += 1
             break
-        elif left > right: # 리스트에 확인할 원소가 없음
-            break
+            
         elif people[left] + people[right] <= limit:
+            answer += 1
             left += 1
             right -= 1
-            answer += 1
+            
         else:
-            left += 1
             answer += 1
+            right -= 1
 
     return answer
