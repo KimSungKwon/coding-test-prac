@@ -4,20 +4,34 @@ https://programmers.co.kr/learn/courses/30/lessons/42861
 
 kruskal 알고리즘 사용
 '''
+
+def find_parent(parent, x):
+    if parent[x] != x:
+        parent[x] = find_parent(parent, parent[x])
+    return parent[x]
+
+def union(parent, a, b):
+    a = find_parent(parent, a)
+    b = find_parent(parent, b)
+
+    if a < b:
+        parent[b] = a
+    else:
+        parent[a] = b
+
 def solution(n, costs):
     answer = 0
-    costs.sort(key= lambda x: x[2])
-    accessible = set([costs[0][0], costs[0][1]])
-    answer += costs[0][2]
+    parent = [0] * (n)
+    costs.sort(key=lambda x: x[2])
+    
+    for i in range(n):
+        parent[i] = i
+        
+    for edge in costs:
+        a, b, cost = edge
 
-    while len(accessible) < n:
-        for cost in costs[1:]:
-            if cost[0] in accessible and cost[1] in accessible:
-                continue
-            if cost[0] in accessible or cost[1] in accessible:
-                accessible.update([cost[0], cost[1]])
-                answer += cost[2]
-                break
-
-
+        if find_parent(parent, a) != find_parent(parent, b):
+            union(parent, a, b)
+            answer += cost
+    
     return answer
