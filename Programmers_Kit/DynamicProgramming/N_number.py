@@ -27,7 +27,7 @@ def solution(N, number):
     for i in range(2, 9): 
         for j in range(1, i): 
             for data1 in dp[j]:       # dp[j]
-                for data2 in dp[i-j]: # dp[i-j
+                for data2 in dp[i-j]: # dp[i-j]
                     dp[i].append(data1 + data2)
                     dp[i].append(data1 - data2)
                     dp[i].append(data1 * data2)
