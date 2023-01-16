@@ -8,11 +8,11 @@
 >  3.  2번 반복
 
     def dfs(graph, v, visited):
-	    visited[v] = True	// 1
-	    for i in graph[v]:	// 2
-		    if not visited[i]:
-			    // 변형 가능
-			    dfs(graph, i, visited)	// 3
+	visited[v] = True	// 1
+	for i in graph[v]:	// 2
+		if not visited[i]:
+		    // 변형 가능
+		    dfs(graph, i, visited)	// 3
 			    
 정해진 갯수를 랜덤으로 흩뿌리기 (순열과 조합)
 
