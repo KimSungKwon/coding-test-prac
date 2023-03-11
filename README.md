@@ -18,7 +18,7 @@
 - 반복문으로 해결하기
 ## [최단 경로 탐색](https://github.com/KimSungKwon/coding-test-prac/tree/main/Chapter09_Shortest_Path)
 - 다익스트라 
-  - heap
+  - heap (Binary Search Tree)
   - priority queue (우선순위 큐)
 - 플로이드 워셜
 ## [그래프](https://github.com/KimSungKwon/coding-test-prac/tree/main/Chapter10_Graph)
