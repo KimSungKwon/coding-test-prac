@@ -29,8 +29,9 @@
 > 1. 탐색 시작 노드를 **큐에 삽입, 방문처리**
 > 2. 큐에서 노드를 꺼내 해당 노드의 [인접, 방문X] 노드를 모두 **큐에 삽입, 방문처리**
 > 3. 2번 반복
-
-    def bfs(graph, start, visited):
+	
+    graph = [[]], visited = []
+    def bfs(start):
 	    q = deque()
 	    q.append(start), visited[start] = True	// 1
 	    while q:
