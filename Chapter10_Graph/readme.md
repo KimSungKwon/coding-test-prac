@@ -60,7 +60,7 @@ union & find_parent : **무방향** 그래프의 사이클 판별 가능
 	indegree = [0] * (v + 1)
 	graph = [[] for _ in range(v + 1)]
 	for _ in range(e):
-		graph[a].append(b)
+		graph[a].append(b)	# 방향 그래프라서
 		indegree[b] += 1
 
     def topology_sort():
