@@ -67,14 +67,14 @@ union & find_parent : **무방향** 그래프의 사이클 판별 가능
 	    q = deque()
 	    
 	    for i in range(1, v + 1):	# 1
-		    if indegree[i] == 0:
-			    q.append(i)
+	    	if indegree[i] == 0:
+		    q.append(i)
 	
-		while q:	# 2
-			now = q.popleft()
-			result.append(now)
+	    while q:	# 2
+	        now = q.popleft()
+		result.append(now)
 			
-			for i in graph[now]:
-				indegree[i] -= 1
-				if indegree[i] == 0:	# 3
-					q.append(i)
+		for i in graph[now]:
+		    indegree[i] -= 1
+		    if indegree[i] == 0:	# 3
+		        q.append(i)
