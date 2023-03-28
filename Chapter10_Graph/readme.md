@@ -66,8 +66,8 @@ MST 등록 여부 배열 사용
 	heapq.heappush(min_heap, (0, 1)   # 1
 
 	while min_heap:   # 5
-		cost, now = heapq.heappop(min_heap)   # 2, 3
-		if not visited[now]: visited[now] = True, answer += cost
+		cost, now = heapq.heappop(min_heap)   # 2
+		if not visited[now]: visited[now] = True, answer += cost   # 3
 
 		for c, v in graph[now]:   # 4
 			if not visited[v]: heapq.heappush(min_heap, (c, v))
