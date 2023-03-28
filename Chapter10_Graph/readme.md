@@ -60,17 +60,17 @@ MST 등록 여부 배열 사용
 > 5. heap이 빌 때 까지 2번부터 반복 
 
     for _ in range(e):
-	graph[a].append( (c, b) )
-	graph[b].append( (c, a) )
+	    graph[a].append( (c, b) )
+	    graph[b].append( (c, a) )
 	
-    heapq.heappush(min_heap, (0, 1)   # 1
+	heapq.heappush(min_heap, (0, 1)   # 1
 
-    while min_heap:   # 5
-	cost, now = heapq.heappop(min_heap)   # 2, 3
-	if not visited[now]: visited[now] = True, answer += cost
+	while min_heap:   # 5
+		cost, now = heapq.heappop(min_heap)   # 2, 3
+		if not visited[now]: visited[now] = True, answer += cost
 
-	for c, v in graph[now]:   # 4
-	    if not visited[v]: heapq.heappush(min_heap, (c, v))
+		for c, v in graph[now]:   # 4
+			if not visited[v]: heapq.heappush(min_heap, (c, v))
     
 	
 ## 위상 정렬 *topology sort*
@@ -103,4 +103,3 @@ MST 등록 여부 배열 사용
 		    indegree[i] -= 1
 		    if indegree[i] == 0:	# 3
 		        q.append(i)
-
