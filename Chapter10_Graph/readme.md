@@ -26,16 +26,16 @@ union & find_parent : **무방향** 그래프의 사이클 판별 가능
 
     if find_parent(parent, x) == find_parent(parent, y): cycle = True 
 
-## 신장 트리 *spanning tree*
+## 최소 신장 트리 *Minimum Spanning Tree*
 - 모든 노드를 방문할 수 있고 사이클이 없는 그래프 (== 트리)
-
-### 최소 신장 트리 (크루스칼 알고리즘)
 - 최소한의 비용으로 **신장 트리를 찾거나 만들 때** 씀
 (가장 적은 비용으로 모든 노드를 연결) = 그리디 알고리즘
-
-**방향X, 사이클X**
+-  방향X, 사이클X
 
 - 도로를 추가해 모든 섬을 연결하는 문제 등에 활용
+
+### 크루스칼 알고리즘
+union & find_parent 함수 사용
 > 1. edge들을 비용에 따라 오름차순으로 정렬
 > 2. edge를 하나씩 확인하여 신장 트리에 포함시킴 
 > 2-1. 사이클 발생?(=부모가 같은가?) 최소 신장 트리에 포함X
@@ -50,6 +50,28 @@ union & find_parent : **무방향** 그래프의 사이클 판별 가능
 		if find_parent(parent, a) != find_parent(parent, b):	# 2-1
 			union(parent, a, b)	
 			result += cost
+### 프림 알고리즘
+우선순위 큐 (min heap) 사용 = cost 순으로
+MST 등록 여부 배열 사용
+> 1. 시작 노드를 min heap에 삽입 (시작노드라서 cost = 0)
+> 2. min heap을 pop하고, 그 노드가 MST에 등록됐는지 확인
+> 3. 등록 안 됐으면 등록 한 후 cost 추가. 등록 되어있으면 스킵 
+> 4.  pop한 노드와 연결돼있고 아직 등록돼있지 않은 노드를 min heap에 삽입
+> 5. heap이 빌 때 까지 2번부터 반복 
+
+    for _ in range(e):
+	graph[a].append( (c, b) )
+	graph[b].append( (c, a) )
+	
+    heapq.heappush(min_heap, (0, 1)   # 1
+
+    while min_heap:   # 5
+	cost, now = heapq.heappop(min_heap)   # 2, 3
+	if not visited[now]: visited[now] = True, answer += cost
+
+	for c, v in graph[now]:   # 4
+	    if not visited[v]: heapq.heappush(min_heap, (c, v))
+    
 	
 ## 위상 정렬 *topology sort*
 - **방향** 그래프의 모든 노드를 **방향성에 거스르지 않도록 순서대로 나열** 
@@ -81,3 +103,4 @@ union & find_parent : **무방향** 그래프의 사이클 판별 가능
 		    indegree[i] -= 1
 		    if indegree[i] == 0:	# 3
 		        q.append(i)
+
