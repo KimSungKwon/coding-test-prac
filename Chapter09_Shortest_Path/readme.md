@@ -62,14 +62,16 @@
 
     graph = [[INF] * (v + 1) for _ in range(v + 1)]
     
+    # 자신->자신 : 0으로 채우기
     for a in range(1, n + 1):
 		for b in range(1, n + 1):
 			if a == b: graph[a][b] = 0
-			
+	
+	# 초기 입력 받기
 	for _ in range(e):
-		graph[a][b] = c	# a에서 b로 가는 비용 = c
+		graph[a][b] = c	 # a에서 b로 가는 비용 = c
 
-	# floyd 
+	# floyd .. 1부터 k까지를 중간경로로 해서 a->b 계산
 	for k in range(1, v + 1):
 		for a in range(1, v + 1):
 			for b in range(1, v + 1):
