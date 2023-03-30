@@ -40,8 +40,8 @@
 		graph[a].append((b, c))	# a노드에서 b노드로 가는 비용 = c
 
 	def dijkstra(start):
-		heapq.heappush(q, (0, start))
-		distance[start] = 0		# 3
+		heapq.heappush(q, (0, start))   # 3
+		distance[start] = 0	
 	
 		while q:
 			dist, now = heapq.heappop(q)	# 4
