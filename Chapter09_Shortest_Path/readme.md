@@ -43,8 +43,8 @@
 		heapq.heappush(q, (0, start))   # 3
 		distance[start] = 0	
 	
-		while q:
-			dist, now = heapq.heappop(q)	# 4
+		while min_heap:
+			dist, now = heapq.heappop(min_heap)	# 4
 			if distance[now] < dist:
 				continue	# 4.1
 			# 5
@@ -52,7 +52,7 @@
 				cost = dist + data[1]
 				if cost < distance[data[0]]:
 					distance[data[0]] = cost
-					heapq.heappush(q, (cost, data[0]))	# 5.1
+					heapq.heappush(min_heap, (cost, data[0]))	# 5.1
 
 	dijkstra(start)
 
