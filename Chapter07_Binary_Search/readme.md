@@ -50,7 +50,7 @@
     
     data = [1, 2, 4, 4, 8]
     
-    # 정렬된 순서를 유지하며 리스트 a에 데이터 x를 삽입할 가장 왼/오른쪽 인덱스를 찾음
+    # 정렬된 순서를 유지하며 리스트 data에 데이터 x를 삽입할 가장 왼/오른쪽 인덱스를 찾음
     bisect_left(data, x) 	# return 2
     bisect_right(data, x)	# return 4
     
