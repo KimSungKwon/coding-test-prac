@@ -19,12 +19,12 @@ for i in range(2, N+1):
 ## 소인수 분해
 
 ```python
-n = int(input())	# n: 분해할 값
+n = int(input())		# n: 분해할 값
 
-for i in range(2, n+1):	# i 값으로 분해
-    if (i * i > n):	# 최적화
+for i in range(2, n+1):		# i 값으로 분해
+    if (i * i > n):		# 최적화
         break
-    while (n % i == 0):	# i 값으로 분해가 가능하면
+    while (n % i == 0):		# i 값으로 분해가 가능하면
         n = n / i 
         print(i)
 
