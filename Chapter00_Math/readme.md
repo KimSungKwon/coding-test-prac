@@ -1,6 +1,7 @@
 
 # 수학
 ## 소수 리스트 구하기
+### 방법 1. (더 빠름)
 ```python
 # 에라토스테네스의 채
 arr = [True]*(N+1)
@@ -15,6 +16,14 @@ for i in range(2, int(math.sqrt(N))+1):	# sqrt: 제곱근(루트)
 prime_list = []
 for i in range(2, N+1):
 	if arr[i]: prime_list.append(i)
+```
+### 방법 2. (더 쉬움)
+```python
+for i in range(2, N+1):
+    if a[i]:
+        prime_num.append(i)
+        for j in range(2*i, N+1, i):
+            a[j] = False
 ```
 ## 소인수 분해
 
